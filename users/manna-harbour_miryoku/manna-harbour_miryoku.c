@@ -7,15 +7,41 @@
 
 #include "manna-harbour_miryoku.h"
 
-
 // Additional Features double tap guard
-
 enum {
     U_TD_BOOT,
+    U_TD_I_J,
+    U_TD_KOV,
+    KC_IJ,
+    KC_KOV,
 #define MIRYOKU_X(LAYER, STRING) U_TD_U_##LAYER,
 MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_IJ:
+            if (record->event.pressed) {
+                if (is_caps_word_on()) {
+                    add_weak_mods(MOD_BIT(KC_LSFT));
+                }
+                tap_code(KC_I);
+                tap_code(KC_J);
+                return false; // Return false to ignore further processing of key
+            }
+            break;
+        case KC_KOV:
+            if (record->event.pressed) {
+                SEND_STRING("katholiekonderwijs.vlaanderen");
+                return false; // Return false to ignore further processing of key
+            }
+            break;
+        default:
+            break;
+    }
+    return true;
+}
 
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
   if (state->count == 2) {
@@ -29,11 +55,33 @@ void u_td_fn_U_##LAYER(tap_dance_state_t *state, void *user_data) { \
     default_layer_set((layer_state_t)1 << U_##LAYER); \
   } \
 }
+
+void u_td_type_ij(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 2) {
+      tap_code(KC_I);
+      tap_code(KC_J);
+      reset_tap_dance(state);
+  } else {
+      tap_code(KC_I);
+  }
+}
+
+void u_td_type_kov(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 2) {
+      SEND_STRING("katholiekonderwijs.vlaanderen");
+      reset_tap_dance(state);
+  } else {
+      tap_code(KC_V);
+  }
+}
+
 MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
 
 tap_dance_action_t tap_dance_actions[] = {
     [U_TD_BOOT] = ACTION_TAP_DANCE_FN(u_td_fn_boot),
+    [U_TD_I_J] = ACTION_TAP_DANCE_FN(u_td_type_ij),
+    [U_TD_KOV] = ACTION_TAP_DANCE_FN(u_td_type_kov),
 #define MIRYOKU_X(LAYER, STRING) [U_TD_U_##LAYER] = ACTION_TAP_DANCE_FN(u_td_fn_U_##LAYER),
 MIRYOKU_LAYER_LIST
 #undef MIRYOKU_X
