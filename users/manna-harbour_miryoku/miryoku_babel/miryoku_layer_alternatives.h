@@ -7,11 +7,11 @@
 
 #pragma once
 
-// MINE!!!
+// Change these qwertz layers to your liking:
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \
 U_NP,              KC_L,              KC_R,              KC_W,              KC_X,               KC_QUOT,           KC_F,              KC_U,              KC_O,             U_NP,              \
-LGUI_T(KC_S),      LALT_T(KC_T),      LCTL_T(KC_N),      LSFT_T(KC_D),      KC_M,               KC_P,              LSFT_T(KC_H),      LCTL_T(KC_E),      LALT_T(KC_A),     KC_I,              \
-KC_V,              ALGR_T(KC_Z),      KC_J,              KC_G,              KC_C,               KC_B,              KC_K,              KC_Y,              ALGR_T(KC_Q),     KC_IJ,	          \
+KC_S,              LALT_T(KC_T),      LCTL_T(KC_N),      LSFT_T(KC_D),      KC_M,               KC_P,              LSFT_T(KC_H),      LCTL_T(KC_E),      LALT_T(KC_A),     KC_I,              \
+KC_V,              ALGR_T(KC_Z),      LGUI_T(KC_J),      KC_G,              KC_C,               KC_B,              KC_K,              LGUI_T(KC_Y),      ALGR_T(KC_Q),     KC_IJ,	          \
 U_NP,              U_NP,              KC_ESC,            LT(U_NAV,KC_SPC),  LT(U_MOUSE,KC_TAB), LT(U_NUM,KC_ENT),  LT(U_SYM,KC_BSPC), LT(U_FUN,KC_DEL),  U_NP,             U_NP
 
 #define MIRYOKU_ALTERNATIVES_NUM \
@@ -22,20 +22,20 @@ U_NP,              U_NP,              KC_DOT,            KC_0,              KC_E
 
 #define MIRYOKU_ALTERNATIVES_SYM \
 U_NP,              KC_AT,             KC_HASH,           KC_AMPR,           KC_KOV,             U_NP,             U_NP,              U_NP,             U_NP,     	       U_NP,  	          \
-KC_QUES,           KC_SLSH,           KC_DOT,            KC_COMM,           KC_EXLM,            U_NP,             KC_VOLD,           LCTL_T(KC_VOLU), U_NP,               KC_MUTE,              \
+KC_QUES,           KC_SLSH,           KC_DOT,            KC_COMM,           KC_EXLM,            U_NP,             U_NP,              KC_LCTL,          U_NP,               U_NP,              \
 KC_TILDE,          KC_BSLS,           KC_COLN,           KC_SCLN,           KC_CIRC,            U_NP,             U_NP,              U_NP,             U_NP,               U_NP,              \
 U_NP,              U_NP,              KC_GRV,            KC_MINS,           KC_UNDS,            KC_ENT,           KC_BSPC,           KC_DEL,           U_NP,               U_NP
 
 #define MIRYOKU_ALTERNATIVES_NAV_VI \
 U_NP,              U_NP,              U_NP,  	         U_NP,  	        U_NA,              KC_WH_L,           KC_WH_D,           KC_WH_U,           KC_WH_R,           U_NP,              \
-KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           U_NP,              \
-U_NA,              KC_ALGR,           KC_ESC,    	     KC_BTN1,           KC_BTN2,           KC_HOME,           KC_PGDN,           KC_PGUP,           KC_END,            U_NP,              \
+U_NP,              KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_LEFT,           KC_DOWN,           KC_UP,             KC_RGHT,           KC_VOLU,              \
+U_NA,              KC_ALGR,           KC_LGUI,    	     KC_BTN1,           KC_BTN2,           KC_HOME,           KC_PGDN,           KC_PGUP,           KC_END,            KC_VOLD,              \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_ENT,            KC_BSPC,           KC_DEL,            U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_MOUSE_VI \
 U_NP,              U_NP,              U_NP,  	         U_NP,  	        U_NA,              U_NP,              KC_DLR,            U_NP,   	        U_NP,              U_NP,             \
-KC_LGUI,           KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_LT,             KC_LPRN,   	     KC_LCBR,           KC_LBRC,           KC_PIPE,          \
-U_NP,              U_NP,              U_NP,  	         U_NP,  	        U_NA,              KC_GT,             KC_RPRN,           KC_RCBR,           KC_RBRC,           CW_TOGG,             \
+U_NP,              KC_LALT,           KC_LCTL,           KC_LSFT,           U_NA,              KC_LT,             KC_LPRN,   	     KC_LCBR,           KC_LBRC,           KC_PIPE,          \
+U_NP,              U_NP,              KC_LGUI,  	         U_NP,  	        U_NA,              KC_GT,             KC_RPRN,           KC_RCBR,           KC_RBRC,           CW_TOGG,             \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              KC_ENT,            KC_BSPC,           KC_DEL,            U_NP,              U_NP
 
 #define MIRYOKU_ALTERNATIVES_FUN \
