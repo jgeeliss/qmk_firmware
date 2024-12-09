@@ -7,9 +7,6 @@
 
 #pragma once
 
-// qmk flash -kb crkbd -km manna-harbour_miryoku -e MIRYOKU_ALPHAS=QWERTZ -e MIRYOKU_NAV=VI
-// qmk compile -kb hazel/bad_wings -km manna-harbour_miryoku -e MIRYOKU_ALPHAS=QWERTZ -e MIRYOKU_NAV=VI
-
 // MINE!!!
 #define MIRYOKU_ALTERNATIVES_BASE_QWERTZ \
 U_NP,              KC_L,              KC_R,              KC_W,              KC_X,               KC_QUOT,           KC_F,              KC_U,              KC_O,             U_NP,              \
